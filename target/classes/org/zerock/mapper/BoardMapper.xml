@@ -10,14 +10,14 @@
 	select * from tbl_board where bno = #{bno}
 	</select>
 	<insert id ="insert">
-	insert into tbl_board(bno,title,content,writer)
-	values(seq_board.nextval,#{title},#{content},#{writer})
+	INSERT INTO tbl_board(bno,title,content,writer)
+	VALUES(seq_board.nextval,#{title},#{content},#{writer})
 	</insert>
 	<insert id= "insertSelectKey">
 	<selectKey keyProperty = "bno" order = "BEFORE" resultType = "long">
 	select seq_board.nextval from dual
 	</selectKey>
-	insert into tbl_board(bno, title, content, writer)
-	values (#{bno},#{title},#{content},#{writer});
+	INSERT INTO tbl_board(bno, title, content, writer)
+	VALUES (#{bno},#{title},#{content},#{writer})
 	</insert>
 	</mapper>
