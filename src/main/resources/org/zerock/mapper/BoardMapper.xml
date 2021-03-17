@@ -7,7 +7,7 @@
 	<![CDATA[select * from tbl_board where bno>0]]>
 	</select>
 	<select id ="read" resultType = "org.zerock.domain.BoardVO">
-	select * from tbl_board where bno = #{bno}
+	SELECT * FROM tbl_board WHERE bno = #{bno}
 	</select>
 	<insert id ="insert">
 	INSERT INTO tbl_board(bno,title,content,writer)
@@ -15,9 +15,17 @@
 	</insert>
 	<insert id= "insertSelectKey">
 	<selectKey keyProperty = "bno" order = "BEFORE" resultType = "long">
-	select seq_board.nextval from dual
+	SELECT seq_board.nextval FROM dual
 	</selectKey>
 	INSERT INTO tbl_board(bno, title, content, writer)
 	VALUES (#{bno},#{title},#{content},#{writer})
 	</insert>
+	<update id="update">
+		UPDATE tbl_board 
+		SET title=#{title}, 
+		content = #{content},
+		writer = #{writer},
+		updateDate = sysdate 
+		WHERE bno = #{bno}
+	</update>
 	</mapper>
