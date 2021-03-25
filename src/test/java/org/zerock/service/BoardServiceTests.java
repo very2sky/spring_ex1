@@ -20,7 +20,12 @@ public class BoardServiceTests {
 	private BoardService service;
 	
 	@Test
-	/*public void testRegister() {
+	public void testExist() {
+		log.info(service);
+		assertNotNull(service);
+	}
+	@Test
+	public void testRegister() {
 		BoardVO board =new BoardVO();
 		board.setTitle("새로 작성하는 글");
 		board.setContent("새로 작성하는 내용");
@@ -29,23 +34,23 @@ public class BoardServiceTests {
 		service.register(board);
 		
 		log.info("생성된 게시물의 번호: " + board.getBno());
-	}  */
+	} 
 	/*public void testGetList() {
 		service.getList().forEach(board-> log.info(board));
 	}*/
 	/*public void testGet() {
 		log.info(service .get(1L));
-	}*/
+	}
 	public void testDelete() {
 		log.info("REMOVE RESULT: "+ service.remove(2L));	
-	}
-	public void testUpdate() {
+	}*/
+	/*public void testUpdate() {
 		BoardVO board = service.get(1L);
 		if(board == null) {
 			return ;
 		}
 		board.setTitle("제목을 수정");
 		log.info("MODIFY RESULT "+ service.modify(board));
-	}
+	}*/
 	
 }
