@@ -20,7 +20,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class BoardController {
 	private BoardService service;
-	
+	@GetMapping("/register")
+	public void register() {
+		
+	}
 	@GetMapping("/list")
 	public void list(Model model) {
 		log.info("list");
@@ -54,4 +57,5 @@ public class BoardController {
 		}
 		return "redirect:/board/list";
 	}
+
 }
