@@ -35,11 +35,6 @@ public class BoardController {
 		service.register(board);
 		rttr.addFlashAttribute("result", board.getBno());
 		return "redirect:/board/list";
-	}
-	@GetMapping("/get")
-	public void get (@RequestParam("bno") Long bno, Model model) {
-		log.info("/get");
-		model.addAttribute("board", service.get(bno));
 	}	
 	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) { 
@@ -57,5 +52,9 @@ public class BoardController {
 		}
 		return "redirect:/board/list";
 	}
-
+	@GetMapping({"/get", "/modify"})
+	public void get(@RequestParam("bno") Long bno, Model model) {
+		log.info("/get or modify");
+		model.addAttribute("board",service.get(bno));
+	}
 }
