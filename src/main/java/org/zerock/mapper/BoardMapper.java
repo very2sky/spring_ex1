@@ -10,7 +10,7 @@ import org.zerock.domain.Criteria;
 public interface BoardMapper {
 //@Select("SELECT * FROM tbl_board WHERE bno>0")
 public List<BoardVO> getList();
-public List<BoardVO> getLIstWithPaging(Criteria cri);
+public List<BoardVO> getListWithPaging(Criteria cri);
 public void insert(BoardVO board);
 public Integer insertSelectKey(BoardVO board);
 public BoardVO read(Long bno);
