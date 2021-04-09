@@ -25,7 +25,18 @@ public class BoardMapperTests {
 		@Test
 		public void testGetList() {
 			mapper.getList().forEach(board -> log.info(board));
-		}/*
+		}
+		@Test
+		public void testSearch() {
+			Criteria cri = new Criteria();
+			cri.setKeyword("세로");
+			cri.setType("TC");
+			
+			List<BoardVO> list =mapper.getListWithPaging(cri);
+			list.forEach(board -> log.info(board));
+		}
+		
+		/*
 		@Test
 		public void testInsert() {
 			BoardVO board = new BoardVO();

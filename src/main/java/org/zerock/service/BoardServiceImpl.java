@@ -34,7 +34,11 @@ public List<BoardVO> getList(Criteria cri){
 public BoardVO get(Long bno) {
 	return mapper.read(bno);
 }
-
+@Override
+public int getTotal(Criteria cri) {
+	log.info("get total count");
+	return mapper.getTotalCount(cri);
+}
 @Override
 public boolean modify(BoardVO board) {
 	log.info("modify ..." +board);
