@@ -16,7 +16,7 @@
            <div class="row">
            		<div class="col-lg-12">
            			<div class ="panel panel -default ">
-           				<div class="panel-heading">Board Read Page</div>
+           				<div class="panel-heading">Board MODIFY Page</div>
            				<!-- /.pannel heading -->
            				<div class ="panel-body">
            				<form role ="form" action="/board/modify" method = "post">
@@ -55,8 +55,10 @@
            					<button type = "submit" data-oper='remove' class="btn btn-danger" >Remove</button>
            
            					<button type = "submit" data-oper='list' class="btn btn-info">List</button>
-           
+           					
+           					<input type ='hidden' name='pageNum' value ='<c:out vlaue="${cir.pageNum}"/>'>
            				
+           					<input type ='hidden' name='amount' value ='<c:out vlaue="${cir.amount}"/>'>
           				 </form>
            				
           				 </div>
@@ -66,6 +68,7 @@
         	   </div>
         	   <script type="text/javascript">
         	   $(document).ready(function(){
+        		   
         		   var formObj= $("form");
         		   
         		   $('button').on("click",function(e){

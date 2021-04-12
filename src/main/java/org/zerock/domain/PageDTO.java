@@ -20,7 +20,7 @@ public class PageDTO {
 		this.startPage =this.endPage -9;
 		
 		int realEnd =(int) (Math.ceil((total *1.0)/cri.getAmount()));
-		if(realEnd>this.endPage){
+		if(realEnd<this.endPage){// 4m12th error ? 설마 
 			this.endPage =realEnd;
 		}
 		this.prev =this.startPage>1;
